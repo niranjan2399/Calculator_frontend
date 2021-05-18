@@ -1,0 +1,185 @@
+@import url("https://fonts.googleapis.com/css2?family=Spartan:wght@700&display=swap");
+
+:root {
+  --background: hsl(225, 21%, 49%);
+  --mid_div_bg: hsl(224, 36%, 15%);
+  --bottom_toggle_bg: hsl(223, 31%, 20%);
+  --del_res_bg: hsl(225, 21%, 49%);
+  --del_res_sh: hsl(224, 28%, 35%);
+  --equal_bg: hsl(6, 63%, 50%);
+  --equal_sh: hsl(6, 70%, 34%);
+  --key_bg: hsl(30, 25%, 89%);
+  --key_sh: hsl(28, 16%, 65%);
+  --key_clr: hsl(221, 14%, 31%);
+  --rem_key: white;
+  --top_mid_fclr: white;
+  --eq_clr: white;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  cursor: default;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  background-color: var(--background);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: "Spartan", sans-serif;
+  color: var(--top_mid_fclr);
+}
+
+.main_container {
+  width: 38rem;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+}
+
+.inside_main {
+  display: flex;
+  align-items: center;
+  align-items: flex-end;
+  flex-direction: column;
+}
+
+.inside_main span {
+  font-size: 0.9rem;
+}
+
+.top_div {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 2rem;
+  font-size: 2.2rem;
+  align-items: center;
+}
+
+.mid_div {
+  background-color: var(--mid_div_bg);
+  font-size: 4.2rem;
+  padding: 2rem;
+  margin-bottom: 2rem;
+  text-align: right;
+  border-radius: 0.8rem;
+  overflow: hidden;
+}
+
+.bottom_div {
+  background-color: var(--bottom_toggle_bg);
+  height: auto;
+  border-radius: 0.8rem;
+  padding: 1rem;
+}
+
+.bottom_div * {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+button {
+  flex: 1;
+  padding: 0.8rem;
+  margin: 1rem;
+  background-color: var(--key_bg);
+  box-shadow: 0 0.3rem var(--key_sh);
+  border: none;
+  border-radius: 0.8rem;
+  color: var(--key_clr);
+  font-size: 2.2rem;
+  font-family: "Spartan", sans-serif;
+  align-items: center;
+  cursor: pointer;
+}
+
+.grey {
+  background-color: var(--del_res_bg);
+  box-shadow: 0 0.3rem var(--del_res_sh);
+  border: none;
+  color: var(--rem_key);
+  text-transform: uppercase;
+  font-size: 1.4rem;
+  align-items: center;
+}
+
+.equals {
+  background-color: var(--equal_bg);
+  box-shadow: 0 0.3rem var(--equal_sh);
+  color: var(--eq_clr);
+}
+
+.toggle_button {
+  display: flex;
+  align-items: flex-end;
+}
+
+.toggle_button span {
+  padding: 0 2rem;
+}
+
+.toggle {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background-color: var(--bottom_toggle_bg);
+  border-radius: 1rem;
+  height: 1.6rem;
+  width: 4.6rem;
+}
+
+label {
+  background-color: var(--bottom_toggle_bg);
+  width: 1.1rem;
+  height: 1.1rem;
+  border-radius: 50%;
+  display: block;
+  position: relative;
+  cursor: pointer;
+}
+
+input[type="radio"] {
+  display: none;
+}
+
+label::before {
+  content: "1";
+  font-size: 0.8rem;
+  position: absolute;
+  display: block;
+  transform: translateX(0.3rem) translateY(-1.5rem);
+}
+
+#radio_2 + label::before {
+  content: "2";
+}
+
+#radio_3 + label::before {
+  content: "3";
+}
+
+input[type="radio"]:checked + label {
+  background-color: var(--equal_bg);
+}
+
+@media (max-width: 375px) {
+  body {
+    padding: 2rem;
+  }
+
+  .mid_div {
+    padding: 1.3rem;
+  }
+
+  button {
+    margin: 0.6rem;
+    border-radius: 0.3rem;
+    padding: 1.2rem;
+  }
+}
